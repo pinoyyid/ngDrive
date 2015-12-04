@@ -1,0 +1,31 @@
+{
+  "name": "ngdZ",
+  "version": "0.0.1",
+  "homepage": "https://github.com/pinoyyid/ngd1",
+  "authors": [
+    "Roy Smith <roy.smith.esq@gmail.com>"
+  ],
+  "description": "AngularJS (1) rich integration with Google Drive",
+  "main": "build/module.js",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "angular",
+    "angularjs",
+    "google",
+    "drive",
+    "gdrive",
+    "gapi"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "src",
+    "nggapi_ts_declaration_files"
+  ]
+}

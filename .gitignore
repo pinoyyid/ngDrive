@@ -1,0 +1,13 @@
+node_modules
+.tmp
+.sass-cache
+.idea
+.c9
+nm
+nm22
+bower_components
+demo_app/appscripts/credentials.js
+.c9/state.settings
+.tscache
+npm-debug.log
+src/*.js
