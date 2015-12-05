@@ -26,6 +26,8 @@
     "test",
     "tests",
     "src",
+    "scripts",
+    "Gruntfile.js",
     "nggapi_ts_declaration_files"
   ],
   "devDependencies": {
