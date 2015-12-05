@@ -10,4 +10,4 @@ demo_app/appscripts/credentials.js
 .c9/state.settings
 .tscache
 npm-debug.log
-src/*.js
+#src/*.js
