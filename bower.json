@@ -27,5 +27,11 @@
     "tests",
     "src",
     "nggapi_ts_declaration_files"
-  ]
+  ],
+  "devDependencies": {
+    "sinonjs": "~1.17.1",
+    "angular": "angularjs#~1.4.8",
+    "angular-mocks": "~1.4.8",
+    "jasmine-sinon": "~0.4.0"
+  }
 }
