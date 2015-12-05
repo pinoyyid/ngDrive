@@ -1,4 +1,5 @@
 angular.module('ngm.NgGapi', []);
+/// <reference path="../nggapi_ts_declaration_files/drive_interfaces.d.ts"/>
 'use strict';
 var NgGapi;
 (function (NgGapi) {
@@ -1110,6 +1111,10 @@ var NgGapi;
             return { data: undefined, promise: def.promise, headers: undefined };
         };
         DriveService.prototype.buildUploadConfigObject = function (file, params, content, contentHeaders, isInsert) {
+            //// check the media is base64 encoded
+            //if (base64EncodedContent.match(/^([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?$/) == null) {
+            //	throw ("[D142] content does not appear to be base64 encoded.");
+            //}
             if ((params.uploadType == 'multipart' || params.uploadType == 'media' || params.uploadType == 'resumable')
                 && (isInsert && (!file || !file.mimeType))) {
                 throw ("[D148] file metadata is missing mandatory mime type");
@@ -1182,6 +1187,7 @@ var NgGapi;
 })(NgGapi || (NgGapi = {}));
 angular.module('ngm.NgGapi')
     .service('DriveService', NgGapi.DriveService);
+/// <reference path="../nggapi_ts_declaration_files/drive_interfaces.d.ts"/>
 'use strict';
 var NgGapi;
 (function (NgGapi) {
@@ -1381,6 +1387,7 @@ var NgGapi;
 })(NgGapi || (NgGapi = {}));
 angular.module('ngm.NgGapi')
     .service('HttpService', NgGapi.HttpService);
+/// <reference path="../nggapi_ts_declaration_files/drive_interfaces.d.ts"/>
 'use strict';
 var NgGapi;
 (function (NgGapi) {
@@ -1391,6 +1398,10 @@ var NgGapi;
     var TokenRefreshPolicy = NgGapi.TokenRefreshPolicy;
     var OauthService = (function () {
         function OauthService(scopes, clientId, tokenRefreshPolicy, immediateMode, ownGetAccessTokenFunction, testingRefreshToken, testingAccessToken, testingClientSecret, popupBlockedFunction, $log, $window, $http, $timeout, $q) {
+            //console.log("OAuth instantiated with " + scopes);
+            //$log.log("scopes", this.scopes);
+            //$log.log("trp", this.tokenRefreshPolicy);drivdrivee
+            //console.log('oauth cons');
             this.scopes = scopes;
             this.clientId = clientId;
             this.tokenRefreshPolicy = tokenRefreshPolicy;
@@ -1627,3 +1638,4 @@ NgGapi['Config'] = function () {
         }
     };
 };
+//# sourceMappingURL=module.js.map
