@@ -27,8 +27,7 @@
     "tests",
     "src",
     "scripts",
-    "Gruntfile.js",
-    "ngdrive_ts_declaration_files"
+    "Gruntfile.js"
   ],
   "devDependencies": {
     "sinonjs": "~1.17.1",
