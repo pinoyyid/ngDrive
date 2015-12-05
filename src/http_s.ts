@@ -1,9 +1,9 @@
-/// <reference path="../nggapi_ts_declaration_files/drive_interfaces.d.ts"/>
+/// <reference path="../ngdrive_ts_declaration_files/angular_cropped.d.ts"/>
 
 'use strict';
 
 
-module NgGapi {
+module ngDrive {
 
 	/**
 	 * The Http service.
@@ -43,7 +43,7 @@ module NgGapi {
 		 *
 		 * @returns {ng.IHttpService}
 		 */
-        getOauthService(): NgGapi.IOauthService {
+        getOauthService(): ngDrive.IOauthService {
             return this.OauthService;
         }
 
@@ -343,5 +343,5 @@ module NgGapi {
 }
 
 declare var angular: mng.IAngularStatic;
-angular.module('ngm.NgGapi')
-    .service('HttpService', NgGapi.HttpService);
+angular.module('ngm.ngDrive')
+    .service('HttpService', ngDrive.HttpService);

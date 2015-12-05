@@ -1,7 +1,6 @@
-/// <reference path="../nggapi_ts_declaration_files/drive_interfaces.d.ts"/>
 'use strict';
-var NgGapi;
-(function (NgGapi) {
+var ngDrive;
+(function (ngDrive) {
     var DriveService = (function () {
         function DriveService($log, $timeout, $q, HttpService) {
             this.$log = $log;
@@ -1104,16 +1103,12 @@ var NgGapi;
             return responseObject;
         };
         DriveService.prototype.reject = function (reason) {
-            this.self.$log.error('NgGapi: ' + reason);
+            this.self.$log.error('ngDrive: ' + reason);
             var def = this.self.$q.defer();
             def.reject(reason);
             return { data: undefined, promise: def.promise, headers: undefined };
         };
         DriveService.prototype.buildUploadConfigObject = function (file, params, content, contentHeaders, isInsert) {
-            //// check the media is base64 encoded
-            //if (base64EncodedContent.match(/^([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?$/) == null) {
-            //	throw ("[D142] content does not appear to be base64 encoded.");
-            //}
             if ((params.uploadType == 'multipart' || params.uploadType == 'media' || params.uploadType == 'resumable')
                 && (isInsert && (!file || !file.mimeType))) {
                 throw ("[D148] file metadata is missing mandatory mime type");
@@ -1182,8 +1177,7 @@ var NgGapi;
         DriveService.$inject = ['$log', '$timeout', '$q', 'HttpService'];
         return DriveService;
     })();
-    NgGapi.DriveService = DriveService;
-})(NgGapi || (NgGapi = {}));
-angular.module('ngm.NgGapi')
-    .service('DriveService', NgGapi.DriveService);
-//# sourceMappingURL=drive_s.js.map
+    ngDrive.DriveService = DriveService;
+})(ngDrive || (ngDrive = {}));
+angular.module('ngm.ngDrive')
+    .service('DriveService', ngDrive.DriveService);

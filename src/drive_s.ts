@@ -1,11 +1,11 @@
-/// <reference path="../nggapi_ts_declaration_files/drive_interfaces.d.ts"/>
+/// <reference path="../ngdrive_ts_declaration_files/drive_interfaces.d.ts"/>
 
 'use strict';
 
-module NgGapi {
+module ngDrive {
 
     /**
-     * 
+     *
      */
     export class DriveService implements IDriveService {
         sig = 'DriveService';                                                                                           // used in unit testing to confirm DI
@@ -1602,7 +1602,7 @@ module NgGapi {
 		 * @returns {{data: undefined, promise: IPromise<T>, headers: undefined}}
 		 */
         reject(reason: any): IDriveResponseObject<any, any> {
-            this.self.$log.error('NgGapi: ' + reason);
+            this.self.$log.error('ngDrive: ' + reason);
             var def = this.self.$q.defer();
             def.reject(reason);                                                                                         // which is used to reject the promise
             return { data: undefined, promise: def.promise, headers: undefined };
@@ -1733,7 +1733,7 @@ module NgGapi {
 
 // see https://developers.google.com/drive/web/scopes
 // these are provided only a a convenience to the developer. They are not used by the library
-//NgGapi.DRIVE_SCOPES = {
+//ngDrive.DRIVE_SCOPES = {
 //	drive: "https://www.googleapis.com/auth/drive",
 //	drive_file: "https://www.googleapis.com/auth/drive.file",
 //	apps_readonly: "https://www.googleapis.com/auth/drive.apps.readonly",
@@ -1745,5 +1745,5 @@ module NgGapi {
 //};
 
 declare var angular: mng.IAngularStatic;
-angular.module('ngm.NgGapi')
-    .service('DriveService', NgGapi.DriveService);
+angular.module('ngm.ngDrive')
+    .service('DriveService', ngDrive.DriveService);

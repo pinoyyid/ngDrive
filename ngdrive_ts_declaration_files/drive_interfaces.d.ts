@@ -13,7 +13,7 @@
  */
 
 
-declare module NgGapi {
+declare module ngDrive {
 
 
 	/**
@@ -339,7 +339,7 @@ declare module NgGapi {
 	 * Interface definition for the DriveService. Mostly useful for a mock service
 	 */
 	export interface IDriveService {
-		getHttpService():NgGapi.IHttpService;
+		getHttpService():ngDrive.IHttpService;
 		files:{
 			get(params:IDriveFileGetParameters):IDriveResponseObject<IDriveFile,IDriveFile>;
 			list(params?:IDriveFileListParameters, excludeTrashed?):IDriveResponseObject<IDriveFileList, IDriveFile[]>;

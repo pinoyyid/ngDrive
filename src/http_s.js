@@ -1,7 +1,6 @@
-/// <reference path="../nggapi_ts_declaration_files/drive_interfaces.d.ts"/>
 'use strict';
-var NgGapi;
-(function (NgGapi) {
+var ngDrive;
+(function (ngDrive) {
     var HttpService = (function () {
         function HttpService($log, $http, $timeout, $interval, $q, OauthService) {
             this.$log = $log;
@@ -194,8 +193,7 @@ var NgGapi;
         HttpService.$inject = ['$log', '$http', '$timeout', '$interval', '$q', 'OauthService'];
         return HttpService;
     })();
-    NgGapi.HttpService = HttpService;
-})(NgGapi || (NgGapi = {}));
-angular.module('ngm.NgGapi')
-    .service('HttpService', NgGapi.HttpService);
-//# sourceMappingURL=http_s.js.map
+    ngDrive.HttpService = HttpService;
+})(ngDrive || (ngDrive = {}));
+angular.module('ngm.ngDrive')
+    .service('HttpService', ngDrive.HttpService);

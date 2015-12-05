@@ -1,5 +1,5 @@
 {
-  "name": "ngdZ",
+  "name": "ngDrive",
   "version": "0.1.7",
   "homepage": "https://github.com/pinoyyid/ngd1",
   "authors": [
@@ -28,7 +28,7 @@
     "src",
     "scripts",
     "Gruntfile.js",
-    "nggapi_ts_declaration_files"
+    "ngdrive_ts_declaration_files"
   ],
   "devDependencies": {
     "sinonjs": "~1.17.1",

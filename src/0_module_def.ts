@@ -1,4 +1,4 @@
 
-// define the ngm.NgGapi module. This will then be included by the host app with "angular .module('MyApp', ['ngm.NgGapi']);"
+// define the ngm.ngDrive module. This will then be included by the host app with "angular .module('MyApp', ['ngm.ngDrive']);"
 declare var angular:mng.IAngularStatic;
-angular.module('ngm.NgGapi', []);
+angular.module('ngm.ngDrive', []);

@@ -10,12 +10,12 @@ describe('Service: OauthService', function () {
   var OauthService;
   var $window;
   var LIST_URL = "https://www.googleapis.com/drive/v2/files?maxResults=1000&q=trashed%3Dtrue&fields=items(id%2Ctitle)%2CnextPageToken";
-  var myApp = angular.module('MyApp',['ngm.NgGapi']);
-  myApp.provider('OauthService', NgGapi.Config)
+  var myApp = angular.module('MyApp',['ngm.ngDrive']);
+  myApp.provider('OauthService', ngDrive.Config)
     .config(function (OauthServiceProvider) {
       OauthServiceProvider.setScopes('drive.file');
       OauthServiceProvider.setClientID('1234');
-      OauthServiceProvider.setTokenRefreshPolicy(NgGapi.TokenRefreshPolicy.ON_DEMAND);
+      OauthServiceProvider.setTokenRefreshPolicy(ngDrive.TokenRefreshPolicy.ON_DEMAND);
     });
   beforeEach(inject(function (_OauthService_) {
     OauthService= _OauthService_;
@@ -84,10 +84,9 @@ describe('Service: OauthService', function () {
 
   //it('should set up a timeout to refresh the token', function () {
   //  $window.gapi.auth.getToken = function () {return {access_token: "my_at", expires_in: 3600}};
-  //  OauthService.tokenRefreshPolicy = NgGapi.TokenRefreshPolicy.PRIOR_TO_EXPIRY;
+  //  OauthService.tokenRefreshPolicy = ngDrive.TokenRefreshPolicy.PRIOR_TO_EXPIRY;
   //  OauthService.refreshCallback({resolve:function (){}});
   //  expect(OauthService.testStatus).toEqual('O203');
   //});
 
 });
-

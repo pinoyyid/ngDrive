@@ -1,4 +1,4 @@
-/// <reference path="../nggapi_ts_declaration_files/drive_interfaces.d.ts"/>
+/// <reference path="../ngdrive_ts_declaration_files/drive_interfaces.d.ts"/>
 'use strict';
 
 /*
@@ -7,7 +7,7 @@
  It's a provider so it can be easily configured at app startup to hold the OAuth id and scopes needed for it to operate.
  */
 
-module NgGapi {
+module ngDrive {
 	/**
 	 * an Enum to define the different refresh token behaviours
 	 */
@@ -313,20 +313,20 @@ module NgGapi {
  * Config function which returns a provider containing methods to set OAuth parameters and a $get to return the OAuth service itself.
  * This will be referenced by the app.js startup script, something like:-
  *
- *myApp.provider('oauthService', NgGapi.Config)
+ *myApp.provider('oauthService', ngDrive.Config)
  .config(function (oauthServiceProvider) {
 		oauthServiceProvider.setScopes('drive.file');
 		oauthServiceProvider.setClientID('1234');
-		oauthServiceProvider.setTokenRefreshPolicy(NgGapi.TokenRefreshPolicy.ON_DEMAND);
+		oauthServiceProvider.setTokenRefreshPolicy(ngDrive.TokenRefreshPolicy.ON_DEMAND);
 });
  *
  * @returns a provider with various setters
  */
 
-NgGapi['Config'] = function () {
+ngDrive['Config'] = function () {
 	var scopes;
 	var clientID;
-	var tokenRefreshPolicy = NgGapi.TokenRefreshPolicy.ON_DEMAND;               // default is on demand
+	var tokenRefreshPolicy = ngDrive.TokenRefreshPolicy.ON_DEMAND;               // default is on demand
 	var noAccessTokenPolicy = 500;                                              // default is to retry after 1/2 sec
 	var getAccessTokenFunction = undefined;
 	var immediateMode = false;
@@ -375,7 +375,7 @@ NgGapi['Config'] = function () {
 			var $http = myInjector.get("$http");
 			var $timeout = myInjector.get("$timeout");
 			var $q = myInjector.get("$q");
-			return new NgGapi.OauthService(scopes, clientID, tokenRefreshPolicy,
+			return new ngDrive.OauthService(scopes, clientID, tokenRefreshPolicy,
 				immediateMode, getAccessTokenFunction, testingRefreshToken, testingAccessToken,
 				testingClientSecret, popupBlockedFunction, $log, $window, $http, $timeout, $q);
 		}

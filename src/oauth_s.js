@@ -1,18 +1,13 @@
-/// <reference path="../nggapi_ts_declaration_files/drive_interfaces.d.ts"/>
 'use strict';
-var NgGapi;
-(function (NgGapi) {
+var ngDrive;
+(function (ngDrive) {
     (function (TokenRefreshPolicy) {
         TokenRefreshPolicy[TokenRefreshPolicy["ON_DEMAND"] = 0] = "ON_DEMAND";
         TokenRefreshPolicy[TokenRefreshPolicy["PRIOR_TO_EXPIRY"] = 1] = "PRIOR_TO_EXPIRY";
-    })(NgGapi.TokenRefreshPolicy || (NgGapi.TokenRefreshPolicy = {}));
-    var TokenRefreshPolicy = NgGapi.TokenRefreshPolicy;
+    })(ngDrive.TokenRefreshPolicy || (ngDrive.TokenRefreshPolicy = {}));
+    var TokenRefreshPolicy = ngDrive.TokenRefreshPolicy;
     var OauthService = (function () {
         function OauthService(scopes, clientId, tokenRefreshPolicy, immediateMode, ownGetAccessTokenFunction, testingRefreshToken, testingAccessToken, testingClientSecret, popupBlockedFunction, $log, $window, $http, $timeout, $q) {
-            //console.log("OAuth instantiated with " + scopes);
-            //$log.log("scopes", this.scopes);
-            //$log.log("trp", this.tokenRefreshPolicy);drivdrivee
-            //console.log('oauth cons');
             this.scopes = scopes;
             this.clientId = clientId;
             this.tokenRefreshPolicy = tokenRefreshPolicy;
@@ -197,12 +192,12 @@ var NgGapi;
         };
         return OauthService;
     })();
-    NgGapi.OauthService = OauthService;
-})(NgGapi || (NgGapi = {}));
-NgGapi['Config'] = function () {
+    ngDrive.OauthService = OauthService;
+})(ngDrive || (ngDrive = {}));
+ngDrive['Config'] = function () {
     var scopes;
     var clientID;
-    var tokenRefreshPolicy = NgGapi.TokenRefreshPolicy.ON_DEMAND;
+    var tokenRefreshPolicy = ngDrive.TokenRefreshPolicy.ON_DEMAND;
     var noAccessTokenPolicy = 500;
     var getAccessTokenFunction = undefined;
     var immediateMode = false;
@@ -245,8 +240,7 @@ NgGapi['Config'] = function () {
             var $http = myInjector.get("$http");
             var $timeout = myInjector.get("$timeout");
             var $q = myInjector.get("$q");
-            return new NgGapi.OauthService(scopes, clientID, tokenRefreshPolicy, immediateMode, getAccessTokenFunction, testingRefreshToken, testingAccessToken, testingClientSecret, popupBlockedFunction, $log, $window, $http, $timeout, $q);
+            return new ngDrive.OauthService(scopes, clientID, tokenRefreshPolicy, immediateMode, getAccessTokenFunction, testingRefreshToken, testingAccessToken, testingClientSecret, popupBlockedFunction, $log, $window, $http, $timeout, $q);
         }
     };
 };
-//# sourceMappingURL=oauth_s.js.map
