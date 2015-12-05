@@ -1,6 +1,6 @@
 {
   "name": "ngdZ",
-  "version": "0.0.1",
+  "version": "0.1.7",
   "homepage": "https://github.com/pinoyyid/ngd1",
   "authors": [
     "Roy Smith <roy.smith.esq@gmail.com>"
@@ -26,6 +26,14 @@
     "test",
     "tests",
     "src",
+    "scripts",
+    "Gruntfile.js",
     "nggapi_ts_declaration_files"
-  ]
+  ],
+  "devDependencies": {
+    "sinonjs": "~1.17.1",
+    "angular": "angularjs#~1.4.8",
+    "angular-mocks": "~1.4.8",
+    "jasmine-sinon": "~0.4.0"
+  }
 }

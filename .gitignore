@@ -10,4 +10,6 @@ demo_app/appscripts/credentials.js
 .c9/state.settings
 .tscache
 npm-debug.log
-src/*.js
+# uncomment the following to exclude generated .js from repo. This will require uncommenting the tsc task under gruntfile.ts:test so that Travis CI compiles ts to js files
+#src/*.js
+**/*.js.map
