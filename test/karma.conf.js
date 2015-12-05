@@ -31,6 +31,7 @@ module.exports = function(config) {
       'bower_components/jasmine-sinon/lib/jasmine-sinon.js',
         //'demo_app/appscripts/app.js',
       //'src/**/*.js',
+        'src/0_module_def.js',
         'src/oauth_s.js',
         'src/http_s.js',
         'src/drive_s.js',

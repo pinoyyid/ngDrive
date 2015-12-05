@@ -1,6 +1,7 @@
 #!/bin/bash
 # apply a patch release using https://github.com/mikaelbr/mversion
 
-git branch | grep '* master' > /dev/null || (echo "Must be on master branch" ; exit 1) || exit 1
-mversion patch -m 'Bumped to v%s' --tag 'v%s' || exit 2
+grunt test || exit 1
+git branch | grep '* master' > /dev/null || (echo "Must be on master branch" ; exit 1) || exit 2
+mversion patch -m 'Bumped to v%s' --tag 'v%s' || exit 3
 git push origin --tags
