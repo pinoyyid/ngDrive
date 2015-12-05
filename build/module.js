@@ -1,3 +1,4 @@
+angular.module('ngm.NgGapi', []);
 'use strict';
 var NgGapi;
 (function (NgGapi) {
@@ -1626,4 +1627,3 @@ NgGapi['Config'] = function () {
         }
     };
 };
-angular.module('ngm.NgGapi', []);

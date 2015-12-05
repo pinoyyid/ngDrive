@@ -18,6 +18,7 @@
         "!node_modules/**"
     ],
     "files": [
+        "0_module_def.ts",
         "drive_s.ts",
         "http_s.ts",
         "oauth_s.ts"

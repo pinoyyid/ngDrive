@@ -1,4 +1,3 @@
-/// <reference path="../nggapi_ts_declaration_files/drive_interfaces.d.ts"/>
 'use strict';
 var NgGapi;
 (function (NgGapi) {
@@ -198,4 +197,3 @@ var NgGapi;
 })(NgGapi || (NgGapi = {}));
 angular.module('ngm.NgGapi')
     .service('HttpService', NgGapi.HttpService);
-//# sourceMappingURL=http_s.js.map
