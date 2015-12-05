@@ -1,6 +1,6 @@
 {
   "name": "ng-gapi",
-  "version": "0.0.0",
+  "version": "0.0.4",
   "dependencies": {},
   "devDependencies": {
     "autoprefixer": "^5.1.0",
@@ -28,6 +28,7 @@
     "grunt-newer": "^1.1.0",
     "grunt-ng-annotate": "^0.10.0",
     "grunt-svgmin": "^2.0.1",
+    "grunt-ts": "^5.2.0",
     "grunt-usemin": "^3.0.0",
     "grunt-wiredep": "^2.0.0",
     "gulp": "^3.9.0",

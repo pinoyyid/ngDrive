@@ -1,3 +1,4 @@
+/// <reference path="../nggapi_ts_declaration_files/drive_interfaces.d.ts"/>
 'use strict';
 var NgGapi;
 (function (NgGapi) {
@@ -8,6 +9,10 @@ var NgGapi;
     var TokenRefreshPolicy = NgGapi.TokenRefreshPolicy;
     var OauthService = (function () {
         function OauthService(scopes, clientId, tokenRefreshPolicy, immediateMode, ownGetAccessTokenFunction, testingRefreshToken, testingAccessToken, testingClientSecret, popupBlockedFunction, $log, $window, $http, $timeout, $q) {
+            //console.log("OAuth instantiated with " + scopes);
+            //$log.log("scopes", this.scopes);
+            //$log.log("trp", this.tokenRefreshPolicy);drivdrivee
+            //console.log('oauth cons');
             this.scopes = scopes;
             this.clientId = clientId;
             this.tokenRefreshPolicy = tokenRefreshPolicy;
@@ -245,3 +250,4 @@ NgGapi['Config'] = function () {
     };
 };
 angular.module('ngm.NgGapi', []);
+//# sourceMappingURL=oauth_s.js.map
