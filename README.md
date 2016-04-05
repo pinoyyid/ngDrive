@@ -21,7 +21,6 @@ angular.module('ngm.ngDrive')
 		OauthServiceProvider.setScopes('https://www.googleapis.com/auth/drive.file');
 		OauthServiceProvider.setClientID('2231299-2bvf1.apps.googleusercontent.com');
 		OauthServiceProvider.setTokenRefreshPolicy(ngDrive.TokenRefreshPolicy.ON_DEMAND);
-		OauthServiceProvider.setNoAccessTokenPolicy(999);                 // 0 = fail, > 0 = retry after x
 	});
 ```
 * The syntax of the ngDrive Drive calls mimics the Google JavaScript library.
@@ -148,11 +147,6 @@ angular.module('ngm.ngDrive')
 			//     TokenRefreshPolicy.ON_DEMAND:        The token will be allowed to expire and then refreshed after a 401 failure
 			//     TokenRefreshPolicy.PRIOR_TO_EXPIRY : The token will be refreshed shortly before it is due to expire, preventing any 401's
 		OauthServiceProvider.setTokenRefreshPolicy(ngDrive.TokenRefreshPolicy.ON_DEMAND);
-
-			// Configure what a request should do if there is no access token
-			//    ms=0: The request will fail and return an error to the application to deal with
-			//    ms>0: The request will be retried 10 times with a delay of ms milliseconds. The default is ms=500
-		OauthServiceProvider.setNoAccessTokenPolicy(1000);                 
 
 			// Set immediate mode.This should normally be left to its default of false. Only set it to true if you can ensure that
 			// your app has already been authorized and that the user is logged in to Google.
