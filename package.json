@@ -1,6 +1,6 @@
 {
   "name": "ng-gapi",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "dependencies": {},
   "devDependencies": {
     "bower": "^1.4.1",
