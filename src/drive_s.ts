@@ -1428,10 +1428,6 @@ module ngDrive {
 
 		/**
 		 * Implements revisions.List
-		 * Validates that Dev hasn't inadvertently excluded nextPageToken from response, displaying a warning if missing.
-		 * Previously this fired an error, but there is a scenario where this is valid. Specifically, if Dev wants to
-		 * just return the first n matches (which are generally the n most recent), he can do this by setting maxResults
-		 * and omitting the pageToken.
 		 *
 		 * responseObject.data contains an array of all results across all pages
 		 *
@@ -1442,9 +1438,9 @@ module ngDrive {
 		 * @returns IDriveResponseObject
 		 */
         revisionsList(params: IDriveRevisionListParameters): IDriveResponseObject<IDriveRevisionList, IDriveRevision[]> {
-            if (params && params.fields && params.fields.indexOf('nextPageToken') == -1) {
-                this.self.$log.warn('[D1355] You have tried to list revisions with specific fields, but forgotten to include "nextPageToken" which will crop your results to just one page.');
-            }
+            // if (params && params.fields && params.fields.indexOf('nextPageToken') == -1) {
+            //     this.self.$log.warn('[D1355] You have tried to list revisions with specific fields, but forgotten to include "nextPageToken" which will crop your results to just one page.');
+            // }
             var co: mng.IRequestConfig = {                                                                               // build request config
                 method: 'GET',
                 url: this.self.revisionsUrl.replace(':fid', params.fileId).replace(":id", ""),
