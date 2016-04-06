@@ -124,9 +124,6 @@ var ngDrive;
             return responseObject;
         };
         DriveService.prototype.changesList = function (params) {
-            if (params && params.fields && params.fields.indexOf('nextPageToken') == -1) {
-                this.self.$log.warn('[D145] You have tried to list changes with specific fields, but forgotten to include "nextPageToken" which will crop your results to just one page.');
-            }
             var co = {
                 method: 'GET',
                 url: this.self.changesUrl.replace(':id', ''),
