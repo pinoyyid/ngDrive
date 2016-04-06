@@ -192,7 +192,7 @@ var ngDrive;
         };
         HttpService.$inject = ['$log', '$http', '$timeout', '$interval', '$q', 'OauthService'];
         return HttpService;
-    })();
+    }());
     ngDrive.HttpService = HttpService;
 })(ngDrive || (ngDrive = {}));
 angular.module('ngm.ngDrive')

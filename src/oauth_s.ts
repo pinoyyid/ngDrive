@@ -93,7 +93,7 @@ module ngDrive {
 		getAccessToken(def?:mng.IDeferred<any>):mng.IPromise<GoogleApiOAuth2TokenObject> {
 			//console.log('o88 gAT');
 			if (!def) {                                                                                                 // if not called from HttpService, make a deferred
-				this.$log.warn('[O97] Warning: getAccesToken called without a deferred. This is probably a mistake as it means multiple overlapping calls won\'t resolve');
+				this.$log.info('[O97] Warning: getAccesToken called without a deferred. This is possibly a mistake if called from your own code as it means multiple overlapping calls won\'t resolve');
 				def = this.$q.defer()  ;
 			}
 			if (!!this.testingAccessToken) {                                                                            // if a test token has been set

@@ -323,7 +323,7 @@ declare module ngDrive {
 	 * Interface definition for the OauthService. Mostly useful for a mock service
 	 */
 	export interface IOauthService {
-		getAccessToken(): mng.IPromise<GoogleApiOAuth2TokenObject>;
+		getAccessToken(def?:mng.IDeferred<any>): mng.IPromise<GoogleApiOAuth2TokenObject>;
 		refreshAccessToken(def?:mng.IDeferred<any>): mng.IPromise<GoogleApiOAuth2TokenObject>;
 	}
 

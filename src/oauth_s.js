@@ -39,7 +39,7 @@ var ngDrive;
         OauthService.prototype.getAccessToken = function (def) {
             var _this = this;
             if (!def) {
-                this.$log.warn('[O97] Warning: getAccesToken called without a deferred. This is probably a mistake as it means multiple overlapping calls won\'t resolve');
+                this.$log.info('[O97] Warning: getAccesToken called without a deferred. This is possibly a mistake if called from your own code as it means multiple overlapping calls won\'t resolve');
                 def = this.$q.defer();
             }
             if (!!this.testingAccessToken) {
@@ -191,7 +191,7 @@ var ngDrive;
             return (this.$window['gapi'] && this.$window['gapi'].auth);
         };
         return OauthService;
-    })();
+    }());
     ngDrive.OauthService = OauthService;
 })(ngDrive || (ngDrive = {}));
 ngDrive['Config'] = function () {
