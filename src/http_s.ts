@@ -245,7 +245,7 @@ module ngDrive {
                         statusText: resp.statusText
                     });
                 } else {
-                    this.errorHandler(resp.data, resp.status, resp.headers, resp.configObject, resp.statusText, def, retryCounter);          // do error handling
+                    this.errorHandler(resp.data, resp.status, resp.headers, resp.config, resp.statusText, def, retryCounter);          // do error handling
                 }
             })
         }

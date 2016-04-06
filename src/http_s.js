@@ -141,7 +141,7 @@ var ngDrive;
                     });
                 }
                 else {
-                    _this.errorHandler(resp.data, resp.status, resp.headers, resp.configObject, resp.statusText, def, retryCounter);
+                    _this.errorHandler(resp.data, resp.status, resp.headers, resp.config, resp.statusText, def, retryCounter);
                 }
             });
         };
